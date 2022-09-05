@@ -1,9 +1,9 @@
 import './style.css';
-import {home} from './config.js';
-import {base, element, main } from './pageLoad';
+import { home } from './config.js';
+import { element, main } from './pageLoad';
+import createElementAndClass from './util.js';
 
 export default function load() {
-
   generateReview();
   generateGreeting();
   generateHours();
@@ -26,16 +26,16 @@ export default function load() {
     changingReviews();
 
     function changingReviews() {
-      let reviews = Object.keys(home.reviews);
+      const reviews = Object.keys(home.reviews);
       let author;
       let review;
 
       let index = 0;
 
-      fadingReviews();
-      setInterval(fadingReviews, 6000);
+      animateReviews();
+      setInterval(animateReviews, 6000);
 
-      function fadingReviews() {
+      function animateReviews() {
         text.classList.add('shown');
         reviewer.classList.add('shown');
 
@@ -46,7 +46,7 @@ export default function load() {
           author = reviews[index];
           review = home.reviews[author];
 
-          reviewer.textContent = '- ' + author;
+          reviewer.textContent = `- ${author}`;
           text.textContent = review;
 
           index++;
@@ -90,21 +90,14 @@ export default function load() {
     const hours = document.createElement('div');
     hours.classList.add('hours');
 
-    for (let value of Object.keys(home.hours)) {
+    for (const value of Object.keys(home.hours)) {
       const element = document.createElement('div');
       hours.appendChild(element);
-      element.textContent = value + ' ' + home.hours[value] + '\n';
+      element.textContent = `${value} ${home.hours[value]}\n`;
     }
 
     container.appendChild(hours);
   }
 
   return element;
-}
-
-function createElementAndClass(className) {
-  let foo = document.createElement('div');
-  foo.classList.add(className);
-
-  return foo;
 }

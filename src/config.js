@@ -1,4 +1,4 @@
-let home = {
+const home = {
   header: 'NEM RESTAURANT',
   hoursTitle: 'WORKING HOURS',
   hours: {
@@ -17,10 +17,10 @@ let home = {
   tabs: ['HOME', 'MENU', 'CONTACT'],
   greetingTitle: 'HI NEIGHBOUR,',
   greeting:
-    "We are making yummy meals and trying not to food-poison anyone since 2000s.",
+    'We are making yummy meals and trying not to food-poison anyone since 2000s.',
 };
 
-let contacts = {
+const contacts = {
   addressTitle: 'ADDRESS',
   address: '23 Boulevard Rene Cailloux\nMarignane\nBouches-du-Rhôn\n13700',
   telephoneTitle: 'CONTACTS',
@@ -28,7 +28,7 @@ let contacts = {
   message: 'Instead of calling us, better call your mom.',
 };
 
-let menu = {
+const menu = {
   title: 'Our Food Menu',
   'Main Course': [
     {
@@ -54,7 +54,7 @@ let menu = {
       price: '20€',
     },
   ],
-  'Desserts': [
+  Desserts: [
     {
       name: 'Ice Cream Tarte Apple',
       ingredients: 'Chicken, rice, sausage, spinach',
@@ -66,7 +66,7 @@ let menu = {
       price: '20€',
     },
   ],
-  'Drinks': [
+  Drinks: [
     {
       name: 'Double Chocolate Mud Pie',
       ingredients: 'Chicken, rice, sausage, spinach',

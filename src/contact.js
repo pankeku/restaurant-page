@@ -1,16 +1,16 @@
 import './style.css';
-import {contacts} from './config.js';
-import { base, element, main } from './pageLoad';
+import { contacts } from './config.js';
+import { element, main } from './pageLoad';
 import createElementAndClass from './util.js';
 
 function contact() {
-  let container = createElementAndClass('contact-container');
+  const container = createElementAndClass('contact-container');
 
-  let infoWrapper = createElementAndClass('info-wrapper');
-  
-  let addressContainer = createElementAndClass('address-container');
+  const infoWrapper = createElementAndClass('info-wrapper');
 
-  let telephoneContainer = createElementAndClass('telephone-container');
+  const addressContainer = createElementAndClass('address-container');
+
+  const telephoneContainer = createElementAndClass('telephone-container');
 
   infoWrapper.appendChild(addressContainer);
   infoWrapper.appendChild(telephoneContainer);
@@ -30,13 +30,11 @@ function contact() {
   addressTitle.textContent = contacts.addressTitle;
   address.textContent = contacts.address;
 
-  
-
   addressContainer.append(addressTitle);
   addressContainer.append(address);
 
-  let map = createElementAndClass('contact-map');
-  
+  const map = createElementAndClass('contact-map');
+
   container.appendChild(infoWrapper);
   container.appendChild(map);
 

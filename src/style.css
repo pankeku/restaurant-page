@@ -26,12 +26,17 @@
 body {
   font-family: 'CrimsonSemiBold';
   font-size: 1.2rem;
-  margin: 5px;
+  margin: 0px;
+}
+
+.content {
+  display: flex;
 }
 
 .element {
-  display: grid;
+  display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .container {
@@ -40,6 +45,7 @@ body {
   grid-template-columns: 1fr 1fr;
   width: 100%;
   background-color: black;
+  height:60px;
 }
 
 .header {
@@ -47,42 +53,55 @@ body {
   display: flex;
   justify-content: left;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   background-color: black;
   color: white;
 }
 
-.image {
-  object-fit: fill;
-}
-
 .tabs {
+  justify-self: right;
   font-family: 'CrimsonBold';
   display: grid;
-  grid-template-columns: 50px 50px 50px;
+  grid-auto-flow: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
   color: white;
   gap: 100px;
-  margin-right: 50px;
+  margin-right: 100px;
   font-size: 1rem;
 }
 
+.tab {
+  display: flex;
+  justify-content: center;
+}
+
 .main {
+  flex: 1;
   display: grid;
-  height: 90vh;
   background: url('./image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+
 }
 
 .hours-container,
 .reviews-container,
-.greeting-container,
-.menu-container {
+.greeting-container {
   /*     background-color: rgba(256, 256, 256, 0.8); */
   display: grid;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  margin: 20px;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 20px;
@@ -109,6 +128,8 @@ body {
 }
 
 .review-text {
+  display: flex;
+  flex-wrap: wrap;
   font-family: 'CrimsonItalic';
 }
 
@@ -149,7 +170,8 @@ body {
 }
 
 .reviews-container {
-  width: 300px;
+  width: 200px;
+  height: 200px;
   grid-column-start: 0;
   grid-column-end: 1;
   grid-row-start: 1;
@@ -245,7 +267,51 @@ body {
   font-family: 'CrimsonItalic';
   color: gainsboro;
   grid-row: 2 ;
-  
+}
+
+.menu-item-selected {
+  border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 900px) {
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 1;
+  }
+
+  .reviews-container {
+    order: 3;
+    width: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+
+  .tabs {
+    justify-self: none;
+    margin-right: 0px;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+
 }
 
 

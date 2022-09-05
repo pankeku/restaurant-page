@@ -19,7 +19,7 @@ function generateMapsScript() {
   if (document.getElementById('maps-script') === null) {
     let script = document.createElement('script');
     script.src =
-      'https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=&v=weekly';
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyAu0LrpUQuTFqssEcczRHPqUK3196a96aY&callback=&v=weekly';
     script.setAttribute('async', '');
     script.setAttribute('defer', '');
     script.id = 'maps-script';
