@@ -276,12 +276,15 @@ body {
 @media screen and (max-width: 900px) {
 
   .main {
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-  background-repeat: no-repeat;
+    flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: url('./image.jpg');
+  background-size:cover;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
   background-position: center;
-  flex: 1;
+
   }
 
   .reviews-container {
@@ -293,6 +296,7 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
+    
   }
 
   .header {
@@ -304,12 +308,37 @@ body {
   .tabs {
     justify-self: none;
     margin-right: 0px;
+    gap: 10%;
+    justify-content: center;
   }
 
   .categories {
     display: flex;
     flex-direction: column;
   }
+
+  .info-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-container {
+    gap: 20px;
+  }
+
+  .address-container, .telephone-container {
+    flex: 1;
+    width: auto;
+  }
+
+  .greeting-title {
+    font-size: 3rem;
+  }
+
+  .menu-container {
+    gap: 20px;
+  }
+
 
 
 }
