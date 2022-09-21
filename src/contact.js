@@ -1,53 +1,55 @@
-import './style.css';
 import { contacts } from './config.js';
-import { element, main } from './pageLoad';
-import createElementAndClass from './util.js';
+import { main } from './pageLoad';
+import createElementWithClass from './util.js';
 
-function contact() {
-  const container = createElementAndClass('contact-container');
+function loadContactPage() {
+  main.append(generateContactPage());
+  return main;
+}
 
-  const infoWrapper = createElementAndClass('info-wrapper');
+function generateContactPage() {
+  const container = createElementWithClass('contact-container');
 
-  const addressContainer = createElementAndClass('address-container');
+  const infoWrapper = createElementWithClass('info-wrapper');
 
-  const telephoneContainer = createElementAndClass('telephone-container');
+  const addressContainer = createElementWithClass('address-container');
+
+  const telephoneContainer = createElementWithClass('telephone-container');
 
   infoWrapper.appendChild(addressContainer);
   infoWrapper.appendChild(telephoneContainer);
 
-  const telephoneTitle = createElementAndClass('telephone-title');
+  const telephoneTitle = createElementWithClass('telephone-title');
   telephoneTitle.classList.add('title--underline');
-  const telephone = createElementAndClass('telephone');
+  const telephone = createElementWithClass('telephone');
   telephoneTitle.textContent = contacts.telephoneTitle;
   telephone.textContent = contacts.telephone;
 
   telephoneContainer.appendChild(telephoneTitle);
   telephoneContainer.appendChild(telephone);
 
-  const addressTitle = createElementAndClass('address-title');
+  const addressTitle = createElementWithClass('address-title');
   addressTitle.classList.add('title--underline');
-  const address = createElementAndClass('address');
+  const address = createElementWithClass('address');
   addressTitle.textContent = contacts.addressTitle;
   address.textContent = contacts.address;
 
   addressContainer.append(addressTitle);
   addressContainer.append(address);
 
-  const map = createElementAndClass('contact-map');
+  const map = createElementWithClass('contact-map');
 
   container.appendChild(infoWrapper);
   container.appendChild(map);
 
-  main.appendChild(container);
+  initMap(map);
 
-  initMap();
-
-  return element;
+  return container;
 }
 
-window.initMap = function () {
+window.initMap = function (mapElement) {
   const loc = { lat: 43.4377, lng: 5.0369 };
-  const map = new google.maps.Map(document.querySelector('.contact-map'), {
+  const map = new google.maps.Map(mapElement, {
     zoom: 12,
     center: loc,
   });
@@ -57,4 +59,4 @@ window.initMap = function () {
   });
 };
 
-export default contact;
+export default loadContactPage;

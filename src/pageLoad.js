@@ -1,18 +1,15 @@
 import './style.css';
 import {home} from './config.js';
+import createElementWithClass from './util';
 
+const content = document.getElementById('content');
+const main = createElementWithClass('main');
 
-const element = document.createElement('div');
-element.classList.add('element');
-
-const main = document.createElement('div');
-main.classList.add('main');
-
-function base() {
+function loadBase() {
   generateMapsScript();
-  generateHeader();
-  element.appendChild(main);
   
+  content.append(generateHeader());
+  content.appendChild(main);
 }
 
 function generateMapsScript() {
@@ -28,26 +25,27 @@ function generateMapsScript() {
 }
 
 function generateHeader() {
-  const container = createElementAndClass('container');
+  const container = createElementWithClass('container');
 
-  element.appendChild(container);
 
-  const header = createElementAndClass('header');
+  const header = createElementWithClass('header');
 
   header.textContent = home.header;
 
   container.appendChild(header);
 
-  const tabs = createElementAndClass('tabs');
+  const tabs = createElementWithClass('tabs');
 
   generateTabs(tabs);
 
   container.appendChild(tabs);
+
+  return container;
 }
 
 function generateTabs(parent) {
   for (let value of home.tabs) {
-    let tab = createElementAndClass('tab');
+    let tab = createElementWithClass('tab');
     tab.id = value;
     tab.textContent = value;
 
@@ -55,11 +53,4 @@ function generateTabs(parent) {
   }
 }
 
-function createElementAndClass(className) {
-  let foo = document.createElement('div');
-  foo.classList.add(className);
-
-  return foo;
-}
-
-export { base, main, element };
+export { loadBase, main, content };

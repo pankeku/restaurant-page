@@ -1,4 +1,4 @@
-export default function createElementAndClass(className) {
+export default function createElementWithClass(className) {
   const foo = document.createElement('div');
   foo.classList.add(className);
 

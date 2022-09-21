@@ -1,39 +1,36 @@
 @font-face {
   font-family: 'CrimsonRegular';
-  src: url(./fonts/CrimsonText-Regular.ttf);
+  src: url(../static/fonts/CrimsonText-Regular.ttf);
 }
 
 @font-face {
   font-family: 'CrimsonBold';
-  src: url(./fonts/CrimsonText-Bold.ttf);
+  src: url(../static/fonts/CrimsonText-Bold.ttf);
 }
 
 @font-face {
   font-family: 'CrimsonBoldItalic';
-  src: url(./fonts/CrimsonText-BoldItalic.ttf);
+  src: url(../static/fonts/CrimsonText-BoldItalic.ttf);
 }
 
 @font-face {
   font-family: 'CrimsonItalic';
-  src: url(./fonts/CrimsonText-Italic.ttf);
+  src: url(../static/fonts/CrimsonText-Italic.ttf);
 }
 
 @font-face {
   font-family: 'CrimsonSemiBold';
-  src: url(./fonts/CrimsonText-SemiBold.ttf);
+  src: url(../static/fonts/CrimsonText-SemiBold.ttf);
 }
 
 body {
   font-family: 'CrimsonSemiBold';
   font-size: 1.2rem;
   margin: 0px;
+  min-height: 100vh;
 }
 
-.content {
-  display: flex;
-}
-
-.element {
+#content {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -80,7 +77,7 @@ body {
 .main {
   flex: 1;
   display: grid;
-  background: url('./image.jpg');
+  background: url('../static/images/image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -90,7 +87,6 @@ body {
 .hours-container,
 .reviews-container,
 .greeting-container {
-  /*     background-color: rgba(256, 256, 256, 0.8); */
   display: grid;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -278,7 +274,7 @@ body {
   .main {
   display: flex;
   flex-direction: column;
-  background: url('./image.jpg');
+  background: url('../static/images/image.jpg');
   background-size:cover;
   background-repeat:no-repeat;
   background-position: center;
@@ -287,10 +283,6 @@ body {
 
   :root {
     background-attachment: fixed;
-  }
-
-  .element {
-    
   }
 
   .reviews-container {
